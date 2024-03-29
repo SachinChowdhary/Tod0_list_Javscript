@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <img src="" id="imageElement">
+    <img src="" id="imageElement1">
+</body>
+<script>
+    const div=document.createElement('div')
+    div.setAttribute('title','API value')
+    const body=document.querySelector('body')
+    const xhr = new XMLHttpRequest(); 
+    xhr.open('GET','https://jsonplaceholder.typicode.com/photos');
+    
+    xhr.onreadystatechange=function()
+    {
+        if(xhr.readyState===4){
+            const Res=JSON.parse(xhr.responseText);
+            console.log(Res[0]);
+            div.innerHTML=`<div>${Res[0]['title']} with id ${Res[0]['id']} and albumid is ${Res[0]['albumId']}</div>`
+            body.appendChild(div)
+        }
+    }
+    xhr.addEventListener('abort',(e)=>{
+       consle.log(e)
+    })
+    xhr.send();
+</script>
+</html>

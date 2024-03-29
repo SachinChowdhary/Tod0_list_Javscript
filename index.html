@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const h1=document.querySelector('h1').style;
+    const start=document.querySelector('#start');
+    const stop=document.querySelector('#stop');
+    const body=document.querySelector('body').style;
+    let timeInterval,colour='0123456789ABCDEF';
+    const duration=300
+    let randomChange=()=>{
+      let dummy='#';
+      for(let i=0;i<6;i++){
+        dummy+=colour[Math.floor(Math.random()*colour.length)]
+      }
+      return dummy;
+    }
+    start.addEventListener('click',()=>{
+       if(!timeInterval){
+        timeInterval=setInterval(()=>{
+            body.backgroundColor=randomChange();
+            start.style.color=randomChange();
+            stop.style.color=randomChange();
+            h1.color=randomChange();
+        },duration)
+       }
+        
+    })
+    stop.addEventListener('click',()=>{
+        clearInterval(timeInterval);
+        timeInterval=null;
+
+    });
+</script>
+</html>

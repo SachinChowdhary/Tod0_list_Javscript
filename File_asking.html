@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select File</title>
+</head>
+<body>
+    <input type="file" id="fileInput" />
+    <button onclick="selectFile()">Select File</button>
+
+    <script>
+        function selectFile() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.click(); // Simulate a click on the file input element
+        }
+
+        fileInput.addEventListener('change', handleFileSelect);
+
+        function handleFileSelect(event) {
+            const selectedFile = event.target.files[0];
+            console.log('Selected file:', selectedFile);
+            // You can do further processing with the selected file
+        }
+    </script>
+</body>
+</html>
