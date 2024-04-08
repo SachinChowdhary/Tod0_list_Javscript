@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input list="suggestion">
+    <datalist id="suggestion">
+        
+    </datalist>
+    </body>
+    <script>
+        l=['php','javascript', 'JAVA','KOTLIN','Node', 'Laravel']
+        const data=document.querySelector('#suggestion')
+        for (let index = 0; index <l.length; index++) {
+            const option=document.createElement('option')
+            const anchor=document.createElement('a')
+             anchor.setAttribute('href','https://github.com/SachinChowdhary?tab=repositories')
+             option.setAttribute('value',l[index])
+             option.appendChild(anchor)
+             data.appendChild(option)
+        }
+
+        
+        
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

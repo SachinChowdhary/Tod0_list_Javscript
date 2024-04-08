@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button >Change</button>
+    <input type="text" />
+</body>
+<script>
+//  document.getElementById('a2').textContent=document.querySelector(".a1").textContent
+ const arr=document.querySelectorAll('.a1')
+ const but=document.querySelector('button')
+ const h2=document.querySelector('#a2')
+ const body=document.querySelector('body')
+ const inp=document.querySelector('input')
+ but.addEventListener('click', async()=>{
+     body.style.backgroundColor='#3cb371'
+     but.textContent='submit'
+    await alert(inp.value)
+ })
+//  for (let index = 0; index < arr.length; index++) {
+    
+//    console.log(arr[index].textContent);
+//  }
+ 
+</script>
+</html>
+

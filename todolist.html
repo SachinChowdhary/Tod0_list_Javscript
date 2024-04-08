@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+       *{
+        margin:0;
+        padding:0;
+        }
+    body{
+    background-color:lightpink;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 100vh;
+       }
+ #basic{
+  padding:10px;
+ }
+
+
+        #todo_list {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            align-items: center;
+            border-radius: 8px;
+           
+        }
+
+        #list1 {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div id="todo_list">
+    <div id="color">
+        <h2>To-Do List For Task</h2></div>
+      <div id="basic">
+        <ul id="list1"></ul></div>
+        <div>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+    </div>
+
+    <script>
+    function addTask() {
+        var taskList = document.getElementById('list1');
+
+        var taskItem = document.createElement('li');
+        taskItem.className = 'task';
+
+        var taskInput = document.createElement('input');
+        taskInput.type = 'text';
+
+        var editButton = document.createElement('button');
+        editButton.innerHTML = 'Edit';
+        editButton.onclick = function() {
+            editTask(taskItem);
+        };
+
+        var deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Delete';
+        deleteButton.onclick = function() {
+            taskList.removeChild(taskItem);
+        };
+
+        taskItem.appendChild(taskInput);
+        taskItem.appendChild(editButton);
+        taskItem.appendChild(deleteButton);
+
+        taskList.appendChild(taskItem);
+    }
+
+    function editTask(taskItem) {
+        var taskInput = taskItem.querySelector('input');
+        var currentText = taskInput.value;
+
+        var editText = prompt('Edit Task:', currentText);
+
+        if (editText !== null) {
+            taskInput.value = editText;
+        }
+    }
+
+
+    </script>
+</body>
+</html>

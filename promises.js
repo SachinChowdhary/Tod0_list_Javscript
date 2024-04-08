@@ -85,7 +85,7 @@
 //6th Promise
 async function getAllUsers(){
  try {
-  const reponse= await fetch('https://ipapi.co/json')
+  const reponse= await fetch('https://api.fxratesapi.com/latest')
   //data Fetch krne ke liye thoda time lgta hai isiliye await keyword ki help se excution flow ko rok deta hai
   //beacuse reponse data baki ke line pr depended hai.
   console.log(reponse);
